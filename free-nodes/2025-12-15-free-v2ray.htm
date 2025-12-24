@@ -177,6 +177,21 @@ opkg <span class="token function">install</span> luci-app-clash</pre></div><h2>�
     </div>
 <h4>FAQ</h4>
 <div class="panel panel-default">
+    <div class="panel-heading"><h5>SSR 的混淆方式选择有什么讲究？</h5></div>
+    <div class="panel-body">
+        混淆方式决定流量伪装特性，不同方式适应不同封锁环境。常用方式如 tls1.2_ticket_auth 模拟 HTTPS，http_simple 模拟 HTTP 请求，根据环境选择可提高抗封锁能力。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>WinXray 是否支持 VMess + TLS + WS 模式？</h5></div>
+    <div class="panel-body">
+        是的，WinXray 支持该组合。用户需填写正确的 host、path、端口及证书验证方式。若节点来自订阅源，将自动识别相应参数；否则需手动输入与服务端一致的配置项。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Mihomo 是什么？</h5></div>
+    <div class="panel-body">
+        Mihomo 是 Clash Premium 的开源替代项目，兼容原版 Clash 配置文件并扩展了部分新功能。它性能优异、内存占用低，适用于希望自定义构建代理环境的高级用户。<hr />    </div>
+</div>
+<div class="panel panel-default">
     <div class="panel-heading"><h5>Netch 的全局代理与规则代理有何不同？</h5></div>
     <div class="panel-body">
         全局代理将所有流量都通过节点转发，而规则代理只针对指定 IP、端口或应用。全局代理适合游戏和全局科学上网，规则代理适合优化带宽和分流特定流量。<hr />    </div>
@@ -187,9 +202,14 @@ opkg <span class="token function">install</span> luci-app-clash</pre></div><h2>�
         在 PassWall2 面板中点击“订阅管理”，输入或更新订阅链接后，点击“手动更新”即可自动下载最新节点数据。也可设置定时任务每日自动更新，保持配置最新。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Mihomo 是什么？</h5></div>
+    <div class="panel-heading"><h5>QuantumultX 的 MITM 功能如何使用？</h5></div>
     <div class="panel-body">
-        Mihomo 是 Clash Premium 的开源替代项目，兼容原版 Clash 配置文件并扩展了部分新功能。它性能优异、内存占用低，适用于希望自定义构建代理环境的高级用户。<hr />    </div>
+        QuantumultX 的 MITM（中间人）功能可拦截 HTTPS 流量，用于修改或分析请求与响应。开启时需安装客户端生成的根证书，确保能正确解析加密数据。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>PassWall2 的“节点切换策略”如何配置？</h5></div>
+    <div class="panel-body">
+        在 PassWall2 中可设置多节点策略，如“按延迟排序”、“自动选择最快节点”等。程序会定期测速，根据实时数据自动切换线路，保证连接的稳定性和速度。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>V2Ray 配置中如何避免端口扫描暴露服务？</h5></div>
@@ -202,29 +222,9 @@ opkg <span class="token function">install</span> luci-app-clash</pre></div><h2>�
         混淆方式可将流量伪装成正常 HTTPS 或 HTTP 数据，降低被 DPI 检测风险。合理选择协议和混淆组合，可以提升节点稳定性和长期可用性，确保科学上网顺畅。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>QuantumultX 的 MITM 功能如何使用？</h5></div>
-    <div class="panel-body">
-        QuantumultX 的 MITM（中间人）功能可拦截 HTTPS 流量，用于修改或分析请求与响应。开启时需安装客户端生成的根证书，确保能正确解析加密数据。<hr />    </div>
-</div>
-<div class="panel panel-default">
     <div class="panel-heading"><h5>VLESS + XTLS 在移动网络的优势？</h5></div>
     <div class="panel-body">
-        XTLS 模式减少握手次数和加密开销，适合高延迟或不稳定的移动网络。结合策略组和多节点切换，可提升网页浏览、视频播放和游戏的连接稳定性和流畅度。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>SSR 的混淆方式选择有什么讲究？</h5></div>
-    <div class="panel-body">
-        混淆方式决定流量伪装特性，不同方式适应不同封锁环境。常用方式如 tls1.2_ticket_auth 模拟 HTTPS，http_simple 模拟 HTTP 请求，根据环境选择可提高抗封锁能力。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>PassWall2 的“节点切换策略”如何配置？</h5></div>
-    <div class="panel-body">
-        在 PassWall2 中可设置多节点策略，如“按延迟排序”、“自动选择最快节点”等。程序会定期测速，根据实时数据自动切换线路，保证连接的稳定性和速度。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>WinXray 是否支持 VMess + TLS + WS 模式？</h5></div>
-    <div class="panel-body">
-        是的，WinXray 支持该组合。用户需填写正确的 host、path、端口及证书验证方式。若节点来自订阅源，将自动识别相应参数；否则需手动输入与服务端一致的配置项。    </div>
+        XTLS 模式减少握手次数和加密开销，适合高延迟或不稳定的移动网络。结合策略组和多节点切换，可提升网页浏览、视频播放和游戏的连接稳定性和流畅度。    </div>
 </div>
 <div class="panel panel-default mt-5">
     <div class="panel-heading">
@@ -252,8 +252,8 @@ opkg <span class="token function">install</span> luci-app-clash</pre></div><h2>�
     <div class="col-lg-12 item">
         <div class="card">
             <div class="box-wrap">
-                <h4><a href="/news/article-180444.htm">精通Shadowrocket：手把手教你安全高效替换JSON代理配置</a></h4>
-                <p>在当今数字时代，网络自由与隐私保护已成为每个互联网用户的基本需求。作为iOS平台上广受好评的代理工具，Shadowrocket凭借其强大的功能和简洁的界面赢得了全球用户的青睐。本文将为你呈现一份全面详</p>
+                <h4><a href="/free-nodes/2025-12-3-free-ssr-node.htm">Clash节点在线 | 12月3日18.1M/S|免费Singbox节点/Shadowrocket节点/Clash节点/V2ray节点/SSR节点节点推荐，安卓机场梯子购买推荐</a></h4>
+                <p>这一次的节点更新覆盖了日本、加拿大、美国、香港、韩国、新加坡、欧洲等地区,最高速度可达18.1 M/S。只需复制下方的Clash节点/V2ray节点和singbox节点订阅链接,在客户端添加后即可正常使用。</p>
             </div>
         </div>
     </div>
@@ -262,8 +262,8 @@ opkg <span class="token function">install</span> luci-app-clash</pre></div><h2>�
     <div class="col-lg-12 item">
         <div class="card">
             <div class="box-wrap">
-                <h4><a href="/news/article-179648.htm">突破网络边界：Shadowsocks免费科学上网全攻略</a></h4>
-                <p>在这个信息爆炸的时代，互联网本该是自由开放的海洋，但现实中我们却常常遭遇无形的边界。当你想查阅学术资料、观看海外教育资源或与全球网友交流时，却发现某些网站被一堵无形的墙阻隔。本文将为你详细介绍如何利用</p>
+                <h4><a href="/news/article-176512.htm">解密V2Ray域名：从科学上网到个人网站的华丽转身</a></h4>
+                <p>引言：当代理工具遇上网站建设  在互联网技术日新月异的今天，V2Ray以其出色的科学上网能力赢得了众多用户的青睐。然而，一个有趣的问题逐渐浮出水面：我们能否将用于代理的V2Ray域名"变废为宝"，转而</p>
             </div>
         </div>
     </div>
@@ -272,8 +272,8 @@ opkg <span class="token function">install</span> luci-app-clash</pre></div><h2>�
     <div class="col-lg-12 item">
         <div class="card">
             <div class="box-wrap">
-                <h4><a href="/free-nodes/2025-11-5-free-node-subscribe.htm">Clash节点在线 | 11月5日18.7M/S|免费V2ray节点/Singbox节点/SSR节点/Shadowrocket节点/Clash节点节点推荐，安卓机场梯子购买推荐</a></h4>
-                <p>这一次的节点更新覆盖了美国、香港、欧洲、日本、加拿大、韩国、新加坡等地区,最高速度可达18.7 M/S。只需复制下方的Clash节点/V2ray节点和singbox节点订阅链接,在客户端添加后即可正常使用。</p>
+                <h4><a href="/free-nodes/2025-12-13-free-high-speed-nodes.htm">Clash节点在线 | 12月13日19.4M/S|免费Clash节点/V2ray节点/Shadowrocket节点/Singbox节点/SSR节点节点推荐，安卓机场梯子购买推荐</a></h4>
+                <p>这一次的节点更新覆盖了美国、日本、欧洲、香港、韩国、加拿大、新加坡等地区,最高速度可达19.4 M/S。只需复制下方的Clash节点/V2ray节点和singbox节点订阅链接,在客户端添加后即可正常使用。</p>
             </div>
         </div>
     </div>
@@ -282,18 +282,8 @@ opkg <span class="token function">install</span> luci-app-clash</pre></div><h2>�
     <div class="col-lg-12 item">
         <div class="card">
             <div class="box-wrap">
-                <h4><a href="/free-nodes/2025-12-10-node-share-links.htm">Clash节点在线 | 12月10日21.4M/S|免费Singbox节点/Shadowrocket节点/V2ray节点/Clash节点/SSR节点节点推荐，安卓机场梯子购买推荐</a></h4>
-                <p>这一次的节点更新覆盖了新加坡、美国、韩国、加拿大、香港、日本、欧洲等地区,最高速度可达21.4 M/S。只需复制下方的Clash节点/V2ray节点和singbox节点订阅链接,在客户端添加后即可正常使用。</p>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="row w3l-achievements">
-    <div class="col-lg-12 item">
-        <div class="card">
-            <div class="box-wrap">
-                <h4><a href="/news/article-182030.htm">Clash全攻略：开启高性价比网络代理新时代</a></h4>
-                <p>在当今互联网快速发展的时代，网络访问自由、安全与效率成为不少用户关注的焦点。面对复杂的网络环境与多样化的使用需求，如何以最低的成本获取最优的网络体验，是众多技术爱好者不断探索的课题。而作为开源代理工具</p>
+                <h4><a href="/news/article-175734.htm">iOS7科学上网终极指南：解锁网络自由的全方位攻略</a></h4>
+                <p>在信息爆炸的数字时代，互联网已成为我们获取知识、沟通交流的重要渠道。然而，由于种种原因，某些地区的用户可能无法自由访问全球互联网资源。对于仍在使用iOS7系统的用户来说，虽然设备已不再更新，但通过科学</p>
             </div>
         </div>
     </div>
@@ -312,8 +302,8 @@ opkg <span class="token function">install</span> luci-app-clash</pre></div><h2>�
     <div class="col-lg-12 item">
         <div class="card">
             <div class="box-wrap">
-                <h4><a href="/free-nodes/2025-11-30-free-clash.htm">Clash节点在线 | 11月30日21M/S|免费Shadowrocket节点/Clash节点/V2ray节点/SSR节点/Singbox节点节点推荐，安卓机场梯子购买推荐</a></h4>
-                <p>这一次的节点更新覆盖了欧洲、日本、香港、美国、加拿大、韩国、新加坡等地区,最高速度可达21 M/S。只需复制下方的Clash节点/V2ray节点和singbox节点订阅链接,在客户端添加后即可正常使用。</p>
+                <h4><a href="/free-nodes/2025-12-2-free-ssr-node.htm">Clash节点在线 | 12月2日21M/S|免费Singbox节点/Shadowrocket节点/V2ray节点/Clash节点/SSR节点节点推荐，安卓机场梯子购买推荐</a></h4>
+                <p>这一次的节点更新覆盖了香港、韩国、日本、加拿大、新加坡、欧洲、美国等地区,最高速度可达21 M/S。只需复制下方的Clash节点/V2ray节点和singbox节点订阅链接,在客户端添加后即可正常使用。</p>
             </div>
         </div>
     </div>
@@ -322,8 +312,8 @@ opkg <span class="token function">install</span> luci-app-clash</pre></div><h2>�
     <div class="col-lg-12 item">
         <div class="card">
             <div class="box-wrap">
-                <h4><a href="/free-nodes/2025-12-11-free-node-subscribe.htm">Clash节点在线 | 12月11日20.9M/S|免费Singbox节点/Shadowrocket节点/V2ray节点/SSR节点/Clash节点节点推荐，安卓机场梯子购买推荐</a></h4>
-                <p>这一次的节点更新覆盖了美国、新加坡、香港、加拿大、日本、欧洲、韩国等地区,最高速度可达20.9 M/S。只需复制下方的Clash节点/V2ray节点和singbox节点订阅链接,在客户端添加后即可正常使用。</p>
+                <h4><a href="/free-nodes/2025-12-16-free-ssr-node.htm">Clash节点在线 | 12月16日20.8M/S|免费SSR节点/Clash节点/V2ray节点/Shadowrocket节点/Singbox节点节点推荐，安卓机场梯子购买推荐</a></h4>
+                <p>这一次的节点更新覆盖了日本、韩国、香港、新加坡、加拿大、美国、欧洲等地区,最高速度可达20.8 M/S。只需复制下方的Clash节点/V2ray节点和singbox节点订阅链接,在客户端添加后即可正常使用。</p>
             </div>
         </div>
     </div>
@@ -332,8 +322,8 @@ opkg <span class="token function">install</span> luci-app-clash</pre></div><h2>�
     <div class="col-lg-12 item">
         <div class="card">
             <div class="box-wrap">
-                <h4><a href="/news/article-181231.htm">手把手教你免费获取Clash手机配置文件：解锁高速安全上网新姿势</a></h4>
-                <p>引言：当网络自由成为刚需  在数字围墙越筑越高的今天，普通网民访问全球互联网资源时常常遭遇"此内容不可用"的尴尬。2023年全球互联网自由报告显示，超过60%的网络用户曾因地域限制无法获取所需信息。而</p>
+                <h4><a href="/free-nodes/2025-12-19-free-ssr-subscribe.htm">Clash节点在线 | 12月19日19.3M/S|免费Singbox节点/Clash节点/V2ray节点/Shadowrocket节点/SSR节点节点推荐，安卓机场梯子购买推荐</a></h4>
+                <p>这一次的节点更新覆盖了新加坡、加拿大、韩国、日本、香港、美国、欧洲等地区,最高速度可达19.3 M/S。只需复制下方的Clash节点/V2ray节点和singbox节点订阅链接,在客户端添加后即可正常使用。</p>
             </div>
         </div>
     </div>
@@ -342,8 +332,18 @@ opkg <span class="token function">install</span> luci-app-clash</pre></div><h2>�
     <div class="col-lg-12 item">
         <div class="card">
             <div class="box-wrap">
-                <h4><a href="/news/article-180840.htm">Opera浏览器科学上网功能失效的深度解析与全面解决方案</a></h4>
-                <p>引言：当"免费VPN"成为双刃剑  在数字围墙日益高筑的今天，科学上网已从技术爱好者的专利用具演变为普通网民的生存技能。Opera浏览器以其内置的免费VPN功能吸引了大量用户，但这份"免费的午餐"往往</p>
+                <h4><a href="/news/article-181633.htm">深度剖析米白云Clash：从核心功能到高阶使用的完整指南</a></h4>
+                <p>在当今互联网环境中，网络限制与隐私保护成为全球用户共同关注的话题。作为一款集多功能于一体的网络工具，米白云Clash凭借其出色的性能表现和用户友好的设计理念，逐渐成为突破网络边界的利器。本文将全面解析</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row w3l-achievements">
+    <div class="col-lg-12 item">
+        <div class="card">
+            <div class="box-wrap">
+                <h4><a href="/news/article-178863.htm">R8500梅林固件科学上网终极指南：解锁网络自由的全方位教程</a></h4>
+                <p>开篇：为什么选择R8500与梅林固件的黄金组合？  在数字围墙日益高筑的今天，科学上网已成为现代网民的基础生存技能。而Netgear R8500路由器搭配梅林（Merlin）固件，堪称网络自由探索者的</p>
             </div>
         </div>
     </div>
@@ -354,7 +354,7 @@ opkg <span class="token function">install</span> luci-app-clash</pre></div><h2>�
     <div class="col-lg-12 item">
         <div class="card">
             <div class="box-wrap">
-                                <h4><span class="badge" style="float: right;">16</span> <a href="/date/2025-12/" title="2025-12 归档">2025-12</a></h4>
+                                <h4><span class="badge" style="float: right;">23</span> <a href="/date/2025-12/" title="2025-12 归档">2025-12</a></h4>
                                 <h4><span class="badge" style="float: right;">23</span> <a href="/date/2025-11/" title="2025-11 归档">2025-11</a></h4>
                             </div>
         </div>
