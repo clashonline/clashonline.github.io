@@ -147,34 +147,18 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
 <p style="margin-bottom:3rem;color:#999;font-style:italic;">注：跳转链接可能会 <b style="color:red;">被墙</b> ，如多次打开失败，请先使用下面不稳定免费订阅后，再尝试点击链接</p><p>&nbsp;</p><p></p><h2>订阅链接</h2><p>&nbsp;</p><p><strong>clash订阅链接</strong></p><p>https://clashonline.github.io/uploads/2026/03/0-20260304.yaml</p><p>https://clashonline.github.io/uploads/2026/03/1-20260304.yaml</p><p>https://clashonline.github.io/uploads/2026/03/2-20260304.yaml</p><p>https://clashonline.github.io/uploads/2026/03/3-20260304.yaml</p><p>https://clashonline.github.io/uploads/2026/03/4-20260304.yaml</p><p>&nbsp;</p><p><strong>v2ray订阅链接:</strong></p><p>https://clashonline.github.io/uploads/2026/03/0-20260304.txt</p><p>https://clashonline.github.io/uploads/2026/03/2-20260304.txt</p><p>https://clashonline.github.io/uploads/2026/03/3-20260304.txt</p><p>https://clashonline.github.io/uploads/2026/03/4-20260304.txt</p><p><strong>sing-box订阅链接</strong></p><p>https://clashonline.github.io/uploads/2026/03/20260304.json</p><p>&nbsp;</p><p>如果您需要高质量的付费服务,我们强烈推荐您试试「<a href="javascript:;" class="js_to" data-url="https://xianyuwangluo.top/#/register?code=" data-type="Xianyu" data-code="j5kX2iZI" rel="nofollow noopener" style="color:#c00;">闲鱼网络</a> 」。提供全球范围内快速稳定的高速节点,轻松处理8K高清视频流量,并可解锁流媒体网站和chatGPT。其服务器性能出色,确保您享受到高品质的体验。</p><h2>解锁高效上网：Clash低成本解决方案全攻略与深度解析</h2>  <h2>引言：为什么选择Clash？</h2>  <p>在数字时代，网络隐私与自由访问成为刚需。当传统VPN因价格高昂或速度受限难以满足需求时，<strong>Clash</strong>作为开源代理工具凭借其模块化设计和多协议支持脱颖而出。尤其对于预算有限的用户而言，通过合理配置<strong>低成本Clash方案</strong>，完全能够实现不逊于付费工具的网络体验。本文将系统性地拆解从下载到高阶配置的全流程，并揭示其背后的技术逻辑。  </p>  <hr />  <h2>第一部分：认识Clash的核心价值</h2>  <h3>1.1 Clash的定位与优势</h3>  <p>Clash并非简单的流量转发工具，而是一个<strong>规则驱动的代理中间件</strong>。其核心竞争力在于：<br /> - <strong>协议全能性</strong>：原生支持SS/VMess/Trojan等协议，甚至可自定义混合链路<br /> - <strong>策略分流</strong>：通过YAML配置文件实现“国内直连+国外代理”的智能路由<br /> - <strong>资源占用优化</strong>：Go语言编写的核心进程内存占用通常低于50MB  </p>  <h3>1.2 低成本方案的可行性分析</h3>  <p>所谓“便宜Clash”包含两层含义：<br /> 1. <strong>软件本身免费</strong>：开源社区维护的Clash Core无需付费<br /> 2. <strong>代理资源低成本</strong>：通过订阅机场平摊费用（月均$2-$5）或利用公益节点  </p>  <blockquote>   <p><em>技术点评</em>：Clash的规则引擎是其灵魂所在。<code>Rule Providers</code>功能允许动态更新路由规则，这种设计让低成本节点通过智能分流规避性能瓶颈。  </p> </blockquote>  <hr />  <h2>第二部分：实战部署指南</h2>  <h3>2.1 获取可靠软件源</h3>  <p>⚠️ 安全警告：必须从<strong>GitHub官方仓库</strong>（如Dreamacro/Clash）下载，第三方打包版本可能植入恶意代码。  </p>  <p><strong>多平台安装要点</strong>：<br /> | 系统      | 关键步骤                          | 避坑指南                     |<br /> |-----------|-----------------------------------|------------------------------|<br /> | Windows   | 关闭Defender实时防护后安装        | 添加防火墙例外规则           |<br /> | macOS     | 解除Gatekeeper限制（<code>xattr -cr</code>） | 需在网络设置中手动启用代理   |<br /> | Linux     | 通过systemd配置守护进程           | 注意二进制文件执行权限       |  </p>  <h3>2.2 配置文件的艺术</h3>  <p>一个优化的<code>config.yaml</code>应包含：<br /> ```yaml<br /> proxies:<br />   - name: "低成本节点"<br />     type: vmess<br />     server: example.com<br />     port: 443<br />     uuid: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx<br />     alterId: 0<br />     cipher: auto<br />     tls: true  </p>  <p>rules:<br />   - DOMAIN-SUFFIX,google.com,代理组<br />   - GEOIP,CN,DIRECT  # 国内流量直连<br /> ```  </p>  <p><strong>进阶技巧</strong>：<br /> - 使用<code>url-test</code>策略自动选择延迟最低的节点<br /> - 通过<code>fallback</code>实现故障自动切换  </p>  <hr />  <h2>第三部分：性能调优与问题排查</h2>  <h3>3.1 速度瓶颈突破方案</h3>  <ul> <li><strong>MTU调优</strong>：在路由器设置中将MTU值从1500调整为1472（应对ISP分片）  </li> <li><strong>DNS缓存</strong>：启用Clash的<code>fake-ip</code>模式减少DNS查询延迟  </li> <li><strong>并发控制</strong>：调整<code>tun</code>设备的<code>stack</code>参数（推荐system栈）  </li> </ul>  <h3>3.2 常见故障树</h3>  <p><code>mermaid   graph TD       A[无法连接] --&gt; B{日志报错}       B --&gt;|证书错误| C[检查系统时间]       B --&gt;|连接超时| D[更换传输协议]       B --&gt;|EOF错误| E[降低并发连接数]</code>  </p>  <hr />  <h2>第四部分：生态扩展与风险控制</h2>  <h3>4.1 周边工具推荐</h3>  <ul> <li><strong>Clash Dashboard</strong>：Web界面实时监控流量（如yacd项目）  </li> <li><strong>规则生成器</strong>：使用ACL4SSR自动生成优化规则集  </li> <li><strong>移动端方案</strong>：Clash for Android/iOS的TUN模式全局代理  </li> </ul>  <h3>4.2 安全红线</h3>  <ul> <li>绝对避免使用来路不明的订阅链接（可能包含流量嗅探）  </li> <li>企业环境需关闭UDP转发（防止内网扫描）  </li> <li>定期审计规则集（防止恶意域名劫持）  </li> </ul>  <hr />  <h2>结语：低成本≠低质量</h2>  <p>通过本文的技术拆解可见，Clash的经济性并非源于功能阉割，而是得益于：<br /> 1. 开源社区的集体智慧<br /> 2. 配置灵活带来的资源利用率提升<br /> 3. 规则引擎对低质量节点的兼容能力  </p>  <p>正如Linux哲学所示——“足够好的工具+深度定制=专业级解决方案”。掌握Clash的配置艺术后，你会发现：<strong>网络自由的门槛，原来可以如此亲民</strong>。  </p>  <blockquote>   <p><em>终极建议</em>：将本文作为技术手册配合官方文档使用，并加入Clash的Telegram讨论组获取实时节点情报。记住，最贵的方案未必最适合你，但最懂配置的方案一定最超值。</p> </blockquote> </div>
 <div class="clearfix"></div>
 <div class="col-md-12 mt-5">
-        <p>上一个：<a href="/free-nodes/2026-3-3-free-clash.htm">Clash节点在线 | 3月3日22.1M/S|免费SSR节点/V2ray节点/Trojan节点/Singbox节点/Clash节点/Shadowrocket节点节点推荐，安卓机场梯子购买推荐</a></p>
         <p>下一个：<a href="/free-nodes/2026-3-5-node-share-links.htm">Clash节点在线 | 3月5日20.5M/S|免费Trojan节点/V2ray节点/Singbox节点/SSR节点/Shadowrocket节点/Clash节点节点推荐，安卓机场梯子购买推荐</a></p>
     </div>
 <h4>FAQ</h4>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Nekoray 节点订阅自动更新如何实现？</h5></div>
+    <div class="panel-heading"><h5>SSR 的混淆方式如何选择最合适？</h5></div>
     <div class="panel-body">
-        用户添加订阅 URL 后，Nekoray 会定期下载最新节点列表并替换旧节点。保持节点列表最新可减少手动维护，保证节点可用性和网络连接稳定性，提升使用体验。<hr />    </div>
+        根据网络环境选择适合的混淆方式，如 tls1.2_ticket_auth 模拟 HTTPS 流量，可隐藏真实特征。结合协议插件使用，可以提高抗封锁能力和节点可用性。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Nekobox 可以与 Shadowsocks 等客户端同时使用吗？</h5></div>
     <div class="panel-body">
         可以。Nekobox 配置独立，与 Shadowsocks、Clash 等客户端互不干扰。用户可根据需要通过策略组选择节点，实现灵活的网络管理和分流策略。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>V2Ray 的 Reality 功能是什么？</h5></div>
-    <div class="panel-body">
-        Reality 是 V2Ray 新增的伪装技术，可替代传统 TLS。它无需真实证书，通过公钥验证机制实现端到端加密。相比 Trojan 的 HTTPS 伪装方式，Reality 更轻量、安全且配置更简洁。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>VLESS + XTLS 在高延迟网络中如何优化连接？</h5></div>
-    <div class="panel-body">
-        XTLS 模式通过减少握手和加密开销降低延迟。结合策略组和多节点切换，可在高延迟或不稳定网络环境下保证网页浏览、视频播放和游戏连接稳定，提高用户体验。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Netch 如何结合策略组实现多节点优化？</h5></div>
-    <div class="panel-body">
-        Netch 可按应用和协议设置策略组，将流量分配到最优节点。结合节点延迟检测和自动切换功能，可提高网页浏览、视频播放和游戏访问速度及稳定性。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>如何将 Clash 节点导入到 Sing-box？</h5></div>
@@ -187,14 +171,29 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
         TLS 配置可将流量伪装成正常 HTTPS 请求，隐藏真实数据特征。结合域名伪装、WebSocket 或 QUIC 等传输方式，可有效绕过封锁，提高节点长期可用性和连接稳定性。<hr />    </div>
 </div>
 <div class="panel panel-default">
+    <div class="panel-heading"><h5>V2Ray 的 Reality 功能是什么？</h5></div>
+    <div class="panel-body">
+        Reality 是 V2Ray 新增的伪装技术，可替代传统 TLS。它无需真实证书，通过公钥验证机制实现端到端加密。相比 Trojan 的 HTTPS 伪装方式，Reality 更轻量、安全且配置更简洁。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Netch 如何结合策略组实现多节点优化？</h5></div>
+    <div class="panel-body">
+        Netch 可按应用和协议设置策略组，将流量分配到最优节点。结合节点延迟检测和自动切换功能，可提高网页浏览、视频播放和游戏访问速度及稳定性。<hr />    </div>
+</div>
+<div class="panel panel-default">
     <div class="panel-heading"><h5>Netch 无法识别某游戏流量时应如何处理？</h5></div>
     <div class="panel-body">
         请确认已启用 TUN 模式并在游戏路径中选择正确的执行文件。部分游戏使用反作弊系统需管理员权限运行 Netch；若仍无法识别，可尝试手动添加端口规则。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>SSR 的混淆方式如何选择最合适？</h5></div>
+    <div class="panel-heading"><h5>VLESS + XTLS 在高延迟网络中如何优化连接？</h5></div>
     <div class="panel-body">
-        根据网络环境选择适合的混淆方式，如 tls1.2_ticket_auth 模拟 HTTPS 流量，可隐藏真实特征。结合协议插件使用，可以提高抗封锁能力和节点可用性。<hr />    </div>
+        XTLS 模式通过减少握手和加密开销降低延迟。结合策略组和多节点切换，可在高延迟或不稳定网络环境下保证网页浏览、视频播放和游戏连接稳定，提高用户体验。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Nekoray 节点订阅自动更新如何实现？</h5></div>
+    <div class="panel-body">
+        用户添加订阅 URL 后，Nekoray 会定期下载最新节点列表并替换旧节点。保持节点列表最新可减少手动维护，保证节点可用性和网络连接稳定性，提升使用体验。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Mellow TUN 模式与 SOCKS5 代理有什么区别？</h5></div>
@@ -227,8 +226,8 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
     <div class="col-lg-12 item">
         <div class="card">
             <div class="box-wrap">
-                <h4><a href="/free-nodes/2026-1-23-node-share.htm">Clash节点在线 | 1月23日20.3M/S|免费V2ray节点/Trojan节点/SSR节点/Clash节点/Singbox节点/Shadowrocket节点节点推荐，安卓机场梯子购买推荐</a></h4>
-                <p>这一次的节点更新覆盖了香港、加拿大、新加坡、欧洲、美国、韩国、日本等地区,最高速度可达20.3 M/S。只需复制下方的Clash节点/V2ray节点和singbox节点订阅链接,在客户端添加后即可正常使用。</p>
+                <h4><a href="/free-nodes/2026-3-15-free-v2ray.htm">Clash节点在线 | 3月15日22.3M/S|免费Singbox节点/Shadowrocket节点/SSR节点/Clash节点/Trojan节点/V2ray节点节点推荐，安卓机场梯子购买推荐</a></h4>
+                <p>这一次的节点更新覆盖了香港、韩国、加拿大、新加坡、美国、欧洲、日本等地区,最高速度可达22.3 M/S。只需复制下方的Clash节点/V2ray节点和singbox节点订阅链接,在客户端添加后即可正常使用。</p>
             </div>
         </div>
     </div>
@@ -237,8 +236,8 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
     <div class="col-lg-12 item">
         <div class="card">
             <div class="box-wrap">
-                <h4><a href="/free-nodes/2026-1-27-free-clash-subscribe.htm">Clash节点在线 | 1月27日19.7M/S|免费Trojan节点/SSR节点/V2ray节点/Shadowrocket节点/Clash节点/Singbox节点节点推荐，安卓机场梯子购买推荐</a></h4>
-                <p>这一次的节点更新覆盖了日本、韩国、加拿大、新加坡、香港、美国、欧洲等地区,最高速度可达19.7 M/S。只需复制下方的Clash节点/V2ray节点和singbox节点订阅链接,在客户端添加后即可正常使用。</p>
+                <h4><a href="/free-nodes/2026-3-22-free-subscribe-node.htm">Clash节点在线 | 3月22日21.4M/S|免费Clash节点/V2ray节点/Singbox节点/SSR节点/Trojan节点/Shadowrocket节点节点推荐，安卓机场梯子购买推荐</a></h4>
+                <p>这一次的节点更新覆盖了美国、日本、新加坡、欧洲、加拿大、韩国、香港等地区,最高速度可达21.4 M/S。只需复制下方的Clash节点/V2ray节点和singbox节点订阅链接,在客户端添加后即可正常使用。</p>
             </div>
         </div>
     </div>
@@ -247,8 +246,8 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
     <div class="col-lg-12 item">
         <div class="card">
             <div class="box-wrap">
-                <h4><a href="/free-nodes/2026-2-4-free-clash-subscribe.htm">Clash节点在线 | 2月4日20.5M/S|免费Shadowrocket节点/Singbox节点/SSR节点/Trojan节点/V2ray节点/Clash节点节点推荐，安卓机场梯子购买推荐</a></h4>
-                <p>这一次的节点更新覆盖了香港、美国、日本、新加坡、韩国、加拿大、欧洲等地区,最高速度可达20.5 M/S。只需复制下方的Clash节点/V2ray节点和singbox节点订阅链接,在客户端添加后即可正常使用。</p>
+                <h4><a href="/free-nodes/2026-3-21-free-clash.htm">Clash节点在线 | 3月21日18.7M/S|免费Shadowrocket节点/Clash节点/Trojan节点/SSR节点/Singbox节点/V2ray节点节点推荐，安卓机场梯子购买推荐</a></h4>
+                <p>这一次的节点更新覆盖了新加坡、欧洲、日本、加拿大、美国、香港、韩国等地区,最高速度可达18.7 M/S。只需复制下方的Clash节点/V2ray节点和singbox节点订阅链接,在客户端添加后即可正常使用。</p>
             </div>
         </div>
     </div>
@@ -257,8 +256,8 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
     <div class="col-lg-12 item">
         <div class="card">
             <div class="box-wrap">
-                <h4><a href="/free-nodes/2026-3-7-clash-v2ray-ss-ssr.htm">Clash节点在线 | 3月7日19.6M/S|免费SSR节点/Trojan节点/V2ray节点/Shadowrocket节点/Clash节点/Singbox节点节点推荐，安卓机场梯子购买推荐</a></h4>
-                <p>这一次的节点更新覆盖了美国、香港、新加坡、日本、韩国、加拿大、欧洲等地区,最高速度可达19.6 M/S。只需复制下方的Clash节点/V2ray节点和singbox节点订阅链接,在客户端添加后即可正常使用。</p>
+                <h4><a href="/free-nodes/2026-3-4-free-shadowrocket-node.htm">Clash节点在线 | 3月4日18.7M/S|免费Clash节点/Trojan节点/SSR节点/V2ray节点/Singbox节点/Shadowrocket节点节点推荐，安卓机场梯子购买推荐</a></h4>
+                <p>这一次的节点更新覆盖了美国、欧洲、韩国、新加坡、加拿大、香港、日本等地区,最高速度可达18.7 M/S。只需复制下方的Clash节点/V2ray节点和singbox节点订阅链接,在客户端添加后即可正常使用。</p>
             </div>
         </div>
     </div>
@@ -267,8 +266,8 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
     <div class="col-lg-12 item">
         <div class="card">
             <div class="box-wrap">
-                <h4><a href="/free-nodes/2026-1-31-free-node-subscribe-links.htm">Clash节点在线 | 1月31日22.9M/S|免费SSR节点/V2ray节点/Clash节点/Shadowrocket节点/Singbox节点/Trojan节点节点推荐，安卓机场梯子购买推荐</a></h4>
-                <p>这一次的节点更新覆盖了日本、欧洲、新加坡、加拿大、韩国、美国、香港等地区,最高速度可达22.9 M/S。只需复制下方的Clash节点/V2ray节点和singbox节点订阅链接,在客户端添加后即可正常使用。</p>
+                <h4><a href="/free-nodes/2026-3-20-free-ssr-subscribe.htm">Clash节点在线 | 3月20日20.5M/S|免费SSR节点/Singbox节点/Clash节点/V2ray节点/Trojan节点/Shadowrocket节点节点推荐，安卓机场梯子购买推荐</a></h4>
+                <p>这一次的节点更新覆盖了欧洲、加拿大、香港、新加坡、日本、美国、韩国等地区,最高速度可达20.5 M/S。只需复制下方的Clash节点/V2ray节点和singbox节点订阅链接,在客户端添加后即可正常使用。</p>
             </div>
         </div>
     </div>
@@ -277,8 +276,8 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
     <div class="col-lg-12 item">
         <div class="card">
             <div class="box-wrap">
-                <h4><a href="/free-nodes/2026-1-28-free-ssr-node.htm">Clash节点在线 | 1月28日21.1M/S|免费Shadowrocket节点/SSR节点/Trojan节点/Clash节点/V2ray节点/Singbox节点节点推荐，安卓机场梯子购买推荐</a></h4>
-                <p>这一次的节点更新覆盖了美国、香港、日本、韩国、欧洲、加拿大、新加坡等地区,最高速度可达21.1 M/S。只需复制下方的Clash节点/V2ray节点和singbox节点订阅链接,在客户端添加后即可正常使用。</p>
+                <h4><a href="/free-nodes/2026-4-2-free-subscribe-node.htm">Clash节点在线 | 4月2日20.9M/S|免费V2ray节点/SSR节点/Clash节点/Shadowrocket节点/Trojan节点/Singbox节点节点推荐，安卓机场梯子购买推荐</a></h4>
+                <p>这一次的节点更新覆盖了美国、欧洲、新加坡、加拿大、香港、韩国、日本等地区,最高速度可达20.9 M/S。只需复制下方的Clash节点/V2ray节点和singbox节点订阅链接,在客户端添加后即可正常使用。</p>
             </div>
         </div>
     </div>
@@ -287,8 +286,8 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
     <div class="col-lg-12 item">
         <div class="card">
             <div class="box-wrap">
-                <h4><a href="/free-nodes/2026-1-20-free-subscribe-node.htm">Clash节点在线 | 1月20日21.7M/S|免费Shadowrocket节点/SSR节点/Trojan节点/Clash节点/Singbox节点/V2ray节点节点推荐，安卓机场梯子购买推荐</a></h4>
-                <p>这一次的节点更新覆盖了欧洲、日本、加拿大、韩国、美国、香港、新加坡等地区,最高速度可达21.7 M/S。只需复制下方的Clash节点/V2ray节点和singbox节点订阅链接,在客户端添加后即可正常使用。</p>
+                <h4><a href="/free-nodes/2026-3-18-clash-windows.htm">Clash节点在线 | 3月18日19.3M/S|免费V2ray节点/Singbox节点/Shadowrocket节点/Clash节点/Trojan节点/SSR节点节点推荐，安卓机场梯子购买推荐</a></h4>
+                <p>这一次的节点更新覆盖了新加坡、韩国、日本、加拿大、欧洲、香港、美国等地区,最高速度可达19.3 M/S。只需复制下方的Clash节点/V2ray节点和singbox节点订阅链接,在客户端添加后即可正常使用。</p>
             </div>
         </div>
     </div>
@@ -297,8 +296,8 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
     <div class="col-lg-12 item">
         <div class="card">
             <div class="box-wrap">
-                <h4><a href="/free-nodes/2026-2-21-clash-node.htm">Clash节点在线 | 2月21日20.9M/S|免费Clash节点/V2ray节点/Singbox节点/Shadowrocket节点/Trojan节点/SSR节点节点推荐，安卓机场梯子购买推荐</a></h4>
-                <p>这一次的节点更新覆盖了加拿大、日本、欧洲、香港、韩国、美国、新加坡等地区,最高速度可达20.9 M/S。只需复制下方的Clash节点/V2ray节点和singbox节点订阅链接,在客户端添加后即可正常使用。</p>
+                <h4><a href="/free-nodes/2026-3-25-free-clash.htm">Clash节点在线 | 3月25日22.3M/S|免费Shadowrocket节点/Clash节点/Singbox节点/Trojan节点/SSR节点/V2ray节点节点推荐，安卓机场梯子购买推荐</a></h4>
+                <p>这一次的节点更新覆盖了新加坡、加拿大、美国、日本、韩国、香港、欧洲等地区,最高速度可达22.3 M/S。只需复制下方的Clash节点/V2ray节点和singbox节点订阅链接,在客户端添加后即可正常使用。</p>
             </div>
         </div>
     </div>
@@ -307,8 +306,8 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
     <div class="col-lg-12 item">
         <div class="card">
             <div class="box-wrap">
-                <h4><a href="/free-nodes/2026-1-25-free-v2ray.htm">Clash节点在线 | 1月25日20.9M/S|免费V2ray节点/Clash节点/Trojan节点/Singbox节点/SSR节点/Shadowrocket节点节点推荐，安卓机场梯子购买推荐</a></h4>
-                <p>这一次的节点更新覆盖了新加坡、加拿大、日本、香港、美国、欧洲、韩国等地区,最高速度可达20.9 M/S。只需复制下方的Clash节点/V2ray节点和singbox节点订阅链接,在客户端添加后即可正常使用。</p>
+                <h4><a href="/free-nodes/2026-3-6-free-subscribe-node.htm">Clash节点在线 | 3月6日20.9M/S|免费Shadowrocket节点/Singbox节点/SSR节点/V2ray节点/Clash节点/Trojan节点节点推荐，安卓机场梯子购买推荐</a></h4>
+                <p>这一次的节点更新覆盖了美国、日本、香港、加拿大、韩国、新加坡、欧洲等地区,最高速度可达20.9 M/S。只需复制下方的Clash节点/V2ray节点和singbox节点订阅链接,在客户端添加后即可正常使用。</p>
             </div>
         </div>
     </div>
@@ -317,8 +316,8 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
     <div class="col-lg-12 item">
         <div class="card">
             <div class="box-wrap">
-                <h4><a href="/free-nodes/2026-2-28-node-share.htm">Clash节点在线 | 2月28日18.8M/S|免费Trojan节点/SSR节点/Singbox节点/V2ray节点/Clash节点/Shadowrocket节点节点推荐，安卓机场梯子购买推荐</a></h4>
-                <p>这一次的节点更新覆盖了香港、美国、韩国、加拿大、欧洲、新加坡、日本等地区,最高速度可达18.8 M/S。只需复制下方的Clash节点/V2ray节点和singbox节点订阅链接,在客户端添加后即可正常使用。</p>
+                <h4><a href="/free-nodes/2026-3-10-free-clash-subscribe.htm">Clash节点在线 | 3月10日20.6M/S|免费V2ray节点/Singbox节点/Clash节点/SSR节点/Shadowrocket节点/Trojan节点节点推荐，安卓机场梯子购买推荐</a></h4>
+                <p>这一次的节点更新覆盖了新加坡、韩国、日本、加拿大、香港、欧洲、美国等地区,最高速度可达20.6 M/S。只需复制下方的Clash节点/V2ray节点和singbox节点订阅链接,在客户端添加后即可正常使用。</p>
             </div>
         </div>
     </div>
@@ -329,9 +328,8 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
     <div class="col-lg-12 item">
         <div class="card">
             <div class="box-wrap">
-                                <h4><span class="badge" style="float: right;">10</span> <a href="/date/2026-03/" title="2026-03 归档">2026-03</a></h4>
-                                <h4><span class="badge" style="float: right;">27</span> <a href="/date/2026-02/" title="2026-02 归档">2026-02</a></h4>
-                                <h4><span class="badge" style="float: right;">18</span> <a href="/date/2026-01/" title="2026-01 归档">2026-01</a></h4>
+                                <h4><span class="badge" style="float: right;">1</span> <a href="/date/2026-04/" title="2026-04 归档">2026-04</a></h4>
+                                <h4><span class="badge" style="float: right;">26</span> <a href="/date/2026-03/" title="2026-03 归档">2026-03</a></h4>
                             </div>
         </div>
     </div>
