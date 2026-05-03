@@ -277,6 +277,31 @@ V2Ray采用AES加密等技术，保障用户的网络连接安全。即使是在
     </div>
 <h4>FAQ</h4>
 <div class="panel panel-default">
+    <div class="panel-heading"><h5>V2Ray 的 VMess over WebSocket 适合什么场景？</h5></div>
+    <div class="panel-body">
+        VMess over WebSocket 可以伪装成正常的 Web 流量，适用于被封锁较严格的网络环境。它通过将代理流量嵌入 WebSocket 协议中，使流量更难被检测和拦截。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Trojan-Go 的多路复用（mux）如何开启？</h5></div>
+    <div class="panel-body">
+        Trojan-Go 在配置文件中通过启用 mux 参数即可实现多路复用。此功能允许多个连接共享同一隧道，减少握手延迟并提升整体传输效率，尤其在移动网络中表现出色。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Sing-box 的多出口策略有什么作用？</h5></div>
+    <div class="panel-body">
+        多出口策略允许不同流量通过不同节点访问。例如视频流量通过高速节点，普通网页使用备用节点，实现资源优化与智能分流，提高网络使用体验。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Clash 的策略组支持哪些节点选择策略？</h5></div>
+    <div class="panel-body">
+        支持按延迟选择、随机选择、轮询或手动选择节点。结合规则匹配，用户可实现不同网站或应用使用不同节点，提高访问速度和网络稳定性，同时降低管理复杂度。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Potatso Lite 为什么在 iOS 上广受欢迎？</h5></div>
+    <div class="panel-body">
+        Potatso Lite 是一款操作简洁的代理工具，支持多种代理协议和自定义规则。它适合不需要复杂配置的用户，界面友好、性能稳定，非常适合日常轻量使用和应用代理。<hr />    </div>
+</div>
+<div class="panel panel-default">
     <div class="panel-heading"><h5>V2Ray 的策略组如何根据节点延迟自动切换？</h5></div>
     <div class="panel-body">
         策略组会根据节点延迟和丢包率自动选择最优节点。结合路由规则，可保证国内流量直连、海外流量走最佳节点，提高访问速度和连接稳定性，优化整体网络体验。<hr />    </div>
@@ -287,9 +312,9 @@ V2Ray采用AES加密等技术，保障用户的网络连接安全。即使是在
         Matsuri 会定期测速节点延迟，并结合策略组自动选择延迟最低节点。用户无需手动切换即可保持高速访问，优化网页、视频和游戏体验，提高网络稳定性。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Clash 的策略组支持哪些节点选择策略？</h5></div>
+    <div class="panel-heading"><h5>Hiddify Next 是否兼容 Clash 或 V2Ray 配置文件？</h5></div>
     <div class="panel-body">
-        支持按延迟选择、随机选择、轮询或手动选择节点。结合规则匹配，用户可实现不同网站或应用使用不同节点，提高访问速度和网络稳定性，同时降低管理复杂度。<hr />    </div>
+        Hiddify Next 支持部分 Clash 与 Xray 订阅格式，但建议使用其官方订阅格式以获得完整兼容。若订阅转换异常，可使用 Hiddify 提供的在线转换工具重新生成配置文件导入。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>WinXray 显示配置已加载但无法访问外网，可能原因？</h5></div>
@@ -297,34 +322,9 @@ V2Ray采用AES加密等技术，保障用户的网络连接安全。即使是在
         检查是否启用了系统代理或 TUN 模式，确认浏览器是否使用系统代理设置；查看防火墙或杀软是否拦截 WinXray；确认节点是否被机场下架或订阅失效，必要时重新导入订阅并测速。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Sing-box 的多出口策略有什么作用？</h5></div>
-    <div class="panel-body">
-        多出口策略允许不同流量通过不同节点访问。例如视频流量通过高速节点，普通网页使用备用节点，实现资源优化与智能分流，提高网络使用体验。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Trojan-Go 的多路复用（mux）如何开启？</h5></div>
-    <div class="panel-body">
-        Trojan-Go 在配置文件中通过启用 mux 参数即可实现多路复用。此功能允许多个连接共享同一隧道，减少握手延迟并提升整体传输效率，尤其在移动网络中表现出色。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Potatso Lite 为什么在 iOS 上广受欢迎？</h5></div>
-    <div class="panel-body">
-        Potatso Lite 是一款操作简洁的代理工具，支持多种代理协议和自定义规则。它适合不需要复杂配置的用户，界面友好、性能稳定，非常适合日常轻量使用和应用代理。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Hiddify Next 是否兼容 Clash 或 V2Ray 配置文件？</h5></div>
-    <div class="panel-body">
-        Hiddify Next 支持部分 Clash 与 Xray 订阅格式，但建议使用其官方订阅格式以获得完整兼容。若订阅转换异常，可使用 Hiddify 提供的在线转换工具重新生成配置文件导入。<hr />    </div>
-</div>
-<div class="panel panel-default">
     <div class="panel-heading"><h5>Trojan-Go 是否支持 WebSocket？</h5></div>
     <div class="panel-body">
-        Trojan-Go 增强了原版 Trojan，支持 WebSocket、gRPC 等多种传输方式。通过这些传输层协议，可在伪装网站下运行代理服务，提高隐蔽性和灵活性。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>V2Ray 的 VMess over WebSocket 适合什么场景？</h5></div>
-    <div class="panel-body">
-        VMess over WebSocket 可以伪装成正常的 Web 流量，适用于被封锁较严格的网络环境。它通过将代理流量嵌入 WebSocket 协议中，使流量更难被检测和拦截。    </div>
+        Trojan-Go 增强了原版 Trojan，支持 WebSocket、gRPC 等多种传输方式。通过这些传输层协议，可在伪装网站下运行代理服务，提高隐蔽性和灵活性。    </div>
 </div>
 <div class="panel panel-default mt-5">
     <div class="panel-heading">
@@ -362,8 +362,8 @@ V2Ray采用AES加密等技术，保障用户的网络连接安全。即使是在
     <div class="col-lg-12 item">
         <div class="card">
             <div class="box-wrap">
-                <h4><a href="/free-nodes/2026-3-5-node-share-links.htm">Clash节点在线 | 3月5日20.5M/S|免费Trojan节点/V2ray节点/Singbox节点/SSR节点/Shadowrocket节点/Clash节点节点推荐，安卓机场梯子购买推荐</a></h4>
-                <p>这一次的节点更新覆盖了日本、香港、韩国、美国、新加坡、加拿大、欧洲等地区,最高速度可达20.5 M/S。只需复制下方的Clash节点/V2ray节点和singbox节点订阅链接,在客户端添加后即可正常使用。</p>
+                <h4><a href="/free-nodes/2026-4-19-free-v2ray-subscribe.htm">Clash节点在线 | 4月19日20.1M/S|免费SSR节点/Shadowrocket节点/Singbox节点/Clash节点/V2ray节点/Trojan节点节点推荐，安卓机场梯子购买推荐</a></h4>
+                <p>这一次的节点更新覆盖了香港、欧洲、美国、韩国、加拿大、日本、新加坡等地区,最高速度可达20.1 M/S。只需复制下方的Clash节点/V2ray节点和singbox节点订阅链接,在客户端添加后即可正常使用。</p>
             </div>
         </div>
     </div>
@@ -372,8 +372,8 @@ V2Ray采用AES加密等技术，保障用户的网络连接安全。即使是在
     <div class="col-lg-12 item">
         <div class="card">
             <div class="box-wrap">
-                <h4><a href="/free-nodes/2026-4-22-clash-node.htm">Clash节点在线 | 4月22日22.9M/S|免费SSR节点/Clash节点/V2ray节点/Trojan节点/Singbox节点/Shadowrocket节点节点推荐，安卓机场梯子购买推荐</a></h4>
-                <p>这一次的节点更新覆盖了加拿大、韩国、日本、欧洲、新加坡、香港、美国等地区,最高速度可达22.9 M/S。只需复制下方的Clash节点/V2ray节点和singbox节点订阅链接,在客户端添加后即可正常使用。</p>
+                <h4><a href="/free-nodes/2026-4-25-free-ssr-node.htm">Clash节点在线 | 4月25日18.5M/S|免费SSR节点/Trojan节点/Clash节点/Shadowrocket节点/Singbox节点/V2ray节点节点推荐，安卓机场梯子购买推荐</a></h4>
+                <p>这一次的节点更新覆盖了香港、韩国、新加坡、欧洲、日本、加拿大、美国等地区,最高速度可达18.5 M/S。只需复制下方的Clash节点/V2ray节点和singbox节点订阅链接,在客户端添加后即可正常使用。</p>
             </div>
         </div>
     </div>
@@ -382,8 +382,8 @@ V2Ray采用AES加密等技术，保障用户的网络连接安全。即使是在
     <div class="col-lg-12 item">
         <div class="card">
             <div class="box-wrap">
-                <h4><a href="/free-nodes/2026-4-12-free-ssr-node.htm">Clash节点在线 | 4月12日19.8M/S|免费Clash节点/Trojan节点/SSR节点/V2ray节点/Shadowrocket节点/Singbox节点节点推荐，安卓机场梯子购买推荐</a></h4>
-                <p>这一次的节点更新覆盖了日本、美国、新加坡、香港、韩国、欧洲、加拿大等地区,最高速度可达19.8 M/S。只需复制下方的Clash节点/V2ray节点和singbox节点订阅链接,在客户端添加后即可正常使用。</p>
+                <h4><a href="/free-nodes/2026-4-27-free-v2ray-subscribe.htm">Clash节点在线 | 4月27日22.3M/S|免费Trojan节点/V2ray节点/SSR节点/Shadowrocket节点/Singbox节点/Clash节点节点推荐，安卓机场梯子购买推荐</a></h4>
+                <p>这一次的节点更新覆盖了韩国、香港、新加坡、美国、日本、欧洲、加拿大等地区,最高速度可达22.3 M/S。只需复制下方的Clash节点/V2ray节点和singbox节点订阅链接,在客户端添加后即可正常使用。</p>
             </div>
         </div>
     </div>
@@ -392,8 +392,8 @@ V2Ray采用AES加密等技术，保障用户的网络连接安全。即使是在
     <div class="col-lg-12 item">
         <div class="card">
             <div class="box-wrap">
-                <h4><a href="/free-nodes/2026-4-9-free-clash.htm">Clash节点在线 | 4月9日22.1M/S|免费Trojan节点/Shadowrocket节点/SSR节点/V2ray节点/Singbox节点/Clash节点节点推荐，安卓机场梯子购买推荐</a></h4>
-                <p>这一次的节点更新覆盖了美国、香港、韩国、新加坡、日本、加拿大、欧洲等地区,最高速度可达22.1 M/S。只需复制下方的Clash节点/V2ray节点和singbox节点订阅链接,在客户端添加后即可正常使用。</p>
+                <h4><a href="/free-nodes/2026-4-14-free-v2ray-subscribe.htm">Clash节点在线 | 4月14日18.3M/S|免费Singbox节点/V2ray节点/SSR节点/Shadowrocket节点/Trojan节点/Clash节点节点推荐，安卓机场梯子购买推荐</a></h4>
+                <p>这一次的节点更新覆盖了加拿大、美国、新加坡、香港、韩国、日本、欧洲等地区,最高速度可达18.3 M/S。只需复制下方的Clash节点/V2ray节点和singbox节点订阅链接,在客户端添加后即可正常使用。</p>
             </div>
         </div>
     </div>
@@ -402,8 +402,28 @@ V2Ray采用AES加密等技术，保障用户的网络连接安全。即使是在
     <div class="col-lg-12 item">
         <div class="card">
             <div class="box-wrap">
-                <h4><a href="/free-nodes/2026-4-2-free-subscribe-node.htm">Clash节点在线 | 4月2日20.9M/S|免费V2ray节点/SSR节点/Clash节点/Shadowrocket节点/Trojan节点/Singbox节点节点推荐，安卓机场梯子购买推荐</a></h4>
-                <p>这一次的节点更新覆盖了美国、欧洲、新加坡、加拿大、香港、韩国、日本等地区,最高速度可达20.9 M/S。只需复制下方的Clash节点/V2ray节点和singbox节点订阅链接,在客户端添加后即可正常使用。</p>
+                <h4><a href="/free-nodes/2026-5-1-free-clash.htm">Clash节点在线 | 5月1日19M/S|免费SSR节点/V2ray节点/Clash节点/Shadowrocket节点/Singbox节点/Trojan节点节点推荐，安卓机场梯子购买推荐</a></h4>
+                <p>这一次的节点更新覆盖了日本、韩国、香港、加拿大、美国、欧洲、新加坡等地区,最高速度可达19 M/S。只需复制下方的Clash节点/V2ray节点和singbox节点订阅链接,在客户端添加后即可正常使用。</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row w3l-achievements">
+    <div class="col-lg-12 item">
+        <div class="card">
+            <div class="box-wrap">
+                <h4><a href="/free-nodes/2026-4-23-node-share.htm">Clash节点在线 | 4月23日19.3M/S|免费V2ray节点/SSR节点/Trojan节点/Clash节点/Singbox节点/Shadowrocket节点节点推荐，安卓机场梯子购买推荐</a></h4>
+                <p>这一次的节点更新覆盖了欧洲、日本、美国、加拿大、新加坡、香港、韩国等地区,最高速度可达19.3 M/S。只需复制下方的Clash节点/V2ray节点和singbox节点订阅链接,在客户端添加后即可正常使用。</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row w3l-achievements">
+    <div class="col-lg-12 item">
+        <div class="card">
+            <div class="box-wrap">
+                <h4><a href="/free-nodes/2026-4-26-node-share-links.htm">Clash节点在线 | 4月26日19.9M/S|免费Trojan节点/V2ray节点/Clash节点/SSR节点/Shadowrocket节点/Singbox节点节点推荐，安卓机场梯子购买推荐</a></h4>
+                <p>这一次的节点更新覆盖了加拿大、美国、欧洲、香港、新加坡、日本、韩国等地区,最高速度可达19.9 M/S。只需复制下方的Clash节点/V2ray节点和singbox节点订阅链接,在客户端添加后即可正常使用。</p>
             </div>
         </div>
     </div>
@@ -422,28 +442,8 @@ V2Ray采用AES加密等技术，保障用户的网络连接安全。即使是在
     <div class="col-lg-12 item">
         <div class="card">
             <div class="box-wrap">
-                <h4><a href="/free-nodes/2026-3-30-node-share-links.htm">Clash节点在线 | 3月30日21.1M/S|免费SSR节点/V2ray节点/Trojan节点/Shadowrocket节点/Clash节点/Singbox节点节点推荐，安卓机场梯子购买推荐</a></h4>
-                <p>这一次的节点更新覆盖了香港、加拿大、新加坡、美国、欧洲、韩国、日本等地区,最高速度可达21.1 M/S。只需复制下方的Clash节点/V2ray节点和singbox节点订阅链接,在客户端添加后即可正常使用。</p>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="row w3l-achievements">
-    <div class="col-lg-12 item">
-        <div class="card">
-            <div class="box-wrap">
-                <h4><a href="/free-nodes/2026-4-21-clash-v2ray-ss-ssr.htm">Clash节点在线 | 4月21日21.9M/S|免费Trojan节点/SSR节点/Singbox节点/V2ray节点/Shadowrocket节点/Clash节点节点推荐，安卓机场梯子购买推荐</a></h4>
-                <p>这一次的节点更新覆盖了美国、香港、欧洲、加拿大、新加坡、韩国、日本等地区,最高速度可达21.9 M/S。只需复制下方的Clash节点/V2ray节点和singbox节点订阅链接,在客户端添加后即可正常使用。</p>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="row w3l-achievements">
-    <div class="col-lg-12 item">
-        <div class="card">
-            <div class="box-wrap">
-                <h4><a href="/free-nodes/2026-3-29-node-share.htm">Clash节点在线 | 3月29日19.5M/S|免费Shadowrocket节点/V2ray节点/Trojan节点/Clash节点/Singbox节点/SSR节点节点推荐，安卓机场梯子购买推荐</a></h4>
-                <p>这一次的节点更新覆盖了新加坡、加拿大、韩国、日本、欧洲、美国、香港等地区,最高速度可达19.5 M/S。只需复制下方的Clash节点/V2ray节点和singbox节点订阅链接,在客户端添加后即可正常使用。</p>
+                <h4><a href="/free-nodes/2026-4-12-free-ssr-node.htm">Clash节点在线 | 4月12日19.8M/S|免费Clash节点/Trojan节点/SSR节点/V2ray节点/Shadowrocket节点/Singbox节点节点推荐，安卓机场梯子购买推荐</a></h4>
+                <p>这一次的节点更新覆盖了日本、美国、新加坡、香港、韩国、欧洲、加拿大等地区,最高速度可达19.8 M/S。只需复制下方的Clash节点/V2ray节点和singbox节点订阅链接,在客户端添加后即可正常使用。</p>
             </div>
         </div>
     </div>
@@ -454,8 +454,8 @@ V2Ray采用AES加密等技术，保障用户的网络连接安全。即使是在
     <div class="col-lg-12 item">
         <div class="card">
             <div class="box-wrap">
-                                <h4><span class="badge" style="float: right;">19</span> <a href="/date/2026-04/" title="2026-04 归档">2026-04</a></h4>
-                                <h4><span class="badge" style="float: right;">26</span> <a href="/date/2026-03/" title="2026-03 归档">2026-03</a></h4>
+                                <h4><span class="badge" style="float: right;">3</span> <a href="/date/2026-05/" title="2026-05 归档">2026-05</a></h4>
+                                <h4><span class="badge" style="float: right;">22</span> <a href="/date/2026-04/" title="2026-04 归档">2026-04</a></h4>
                             </div>
         </div>
     </div>
