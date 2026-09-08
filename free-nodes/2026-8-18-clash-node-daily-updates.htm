@@ -158,16 +158,6 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
     </div>
 <h4>FAQ</h4>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Matsuri 的延迟测试准确吗？</h5></div>
-    <div class="panel-body">
-        Matsuri 的延迟测试使用 ICMP 与 TCP 双重检测方式，可较准确反映节点实际响应时间。不过受网络波动影响，建议多次测试并结合速度测试结果综合判断。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Mihomo 节点分组如何提升访问效率？</h5></div>
-    <div class="panel-body">
-        节点可按延迟、地区或用途分组，结合策略组实现自动分流。快速选择最优节点可提高网页、视频和游戏访问速度，同时优化节点管理和维护效率，提升整体网络体验。<hr />    </div>
-</div>
-<div class="panel panel-default">
     <div class="panel-heading"><h5>SSR 协议的多路复用功能如何提升性能？</h5></div>
     <div class="panel-body">
         SSR 多路复用允许多个短连接共享同一通道，减少握手次数和加密开销。适合游戏、即时通讯等高频短连接场景，提升网络吞吐量和连接稳定性，提高整体上网体验。<hr />    </div>
@@ -178,9 +168,9 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
         PAC 模式通过规则动态决定流量是否走代理。适合访问国内外混合网站环境，无需手动切换节点，自动分流提高网络访问效率和连接稳定性。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Vmess 节点可以通过 CDN 吗？</h5></div>
+    <div class="panel-heading"><h5>VLESS + Reality 与 Trojan 在性能上差异大吗？</h5></div>
     <div class="panel-body">
-        可以。Vmess 可通过 WebSocket 与 CDN 结合使用，只需将传输方式设置为 WS 并配置 host 与 path，即可实现流量中转。这样既能隐藏真实服务器，又能提升连接速度。<hr />    </div>
+        两者性能相近。VLESS + Reality 伪装更自然，适合强封锁地区；Trojan 则依托标准 TLS 实现高速连接。选择取决于服务器支持与环境稳定性。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>V2Ray 的 WebSocket + TLS 如何防止流量被检测？</h5></div>
@@ -188,14 +178,24 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
         WebSocket + TLS 可将 V2Ray 流量伪装成正常 HTTPS 请求，隐藏真实数据特征，配合域名伪装和策略组使用，可有效绕过封锁，提高节点安全性和连接稳定性。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>VLESS + XTLS 的传输效率比 Trojan 高吗？</h5></div>
+    <div class="panel-heading"><h5>Mihomo 节点分组如何提升访问效率？</h5></div>
     <div class="panel-body">
-        在高延迟环境下，VLESS + XTLS 的性能通常比 Trojan 高。XTLS 去掉了冗余加密开销，降低 CPU 占用，提高多连接场景下的吞吐率，尤其在服务器高负载情况下表现更佳。<hr />    </div>
+        节点可按延迟、地区或用途分组，结合策略组实现自动分流。快速选择最优节点可提高网页、视频和游戏访问速度，同时优化节点管理和维护效率，提升整体网络体验。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>VLESS + Reality 与 Trojan 在性能上差异大吗？</h5></div>
+    <div class="panel-heading"><h5>Matsuri 的延迟测试准确吗？</h5></div>
     <div class="panel-body">
-        两者性能相近。VLESS + Reality 伪装更自然，适合强封锁地区；Trojan 则依托标准 TLS 实现高速连接。选择取决于服务器支持与环境稳定性。<hr />    </div>
+        Matsuri 的延迟测试使用 ICMP 与 TCP 双重检测方式，可较准确反映节点实际响应时间。不过受网络波动影响，建议多次测试并结合速度测试结果综合判断。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Vmess 节点可以通过 CDN 吗？</h5></div>
+    <div class="panel-body">
+        可以。Vmess 可通过 WebSocket 与 CDN 结合使用，只需将传输方式设置为 WS 并配置 host 与 path，即可实现流量中转。这样既能隐藏真实服务器，又能提升连接速度。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Shadowsocks 密码泄露后应如何应对？</h5></div>
+    <div class="panel-body">
+        立即更改服务端密码与相应的端口，检查服务器是否存在异常连接或 root 活动，查看日志并封禁可疑 IP。若使用多人共享节点，建议为每个用户单独分配独立端口与密码以降低风险传播。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>PassWall2 的主要特性有哪些？</h5></div>
@@ -203,9 +203,9 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
         PassWall2 是基于 OpenWRT 的代理管理面板，支持多种协议（V2Ray、Trojan、Shadowsocks 等），拥有图形化界面和分流规则设置功能。它能帮助路由器实现全局代理和智能分流。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Shadowsocks 密码泄露后应如何应对？</h5></div>
+    <div class="panel-heading"><h5>VLESS + XTLS 的传输效率比 Trojan 高吗？</h5></div>
     <div class="panel-body">
-        立即更改服务端密码与相应的端口，检查服务器是否存在异常连接或 root 活动，查看日志并封禁可疑 IP。若使用多人共享节点，建议为每个用户单独分配独立端口与密码以降低风险传播。    </div>
+        在高延迟环境下，VLESS + XTLS 的性能通常比 Trojan 高。XTLS 去掉了冗余加密开销，降低 CPU 占用，提高多连接场景下的吞吐率，尤其在服务器高负载情况下表现更佳。    </div>
 </div>
 <div class="panel panel-default mt-5">
     <div class="panel-heading">
@@ -252,6 +252,46 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
     <div class="col-lg-12 item">
         <div class="card">
             <div class="box-wrap">
+                <h4><a href="/free-nodes/node-share-links-2026-8-29.htm">Clash节点在线 | 8月29日21.3M/S|免费Shadowrocket节点/Trojan节点/SSR节点/V2ray节点/Clash节点/Singbox节点节点推荐，安卓机场梯子购买推荐</a></h4>
+                <p>这一次的节点更新覆盖了加拿大、新加坡、香港、韩国、美国、日本、欧洲等地区,最高速度可达21.3 M/S。只需复制下方的Clash节点/V2ray节点和singbox节点订阅链接,在客户端添加后即可正常使用。</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row w3l-achievements">
+    <div class="col-lg-12 item">
+        <div class="card">
+            <div class="box-wrap">
+                <h4><a href="/free-nodes/free-node-subscribe-links-2026-8-21.htm">Clash节点在线 | 8月21日19.7M/S|免费Trojan节点/V2ray节点/Shadowrocket节点/SSR节点/Singbox节点/Clash节点节点推荐，安卓机场梯子购买推荐</a></h4>
+                <p>这一次的节点更新覆盖了欧洲、日本、韩国、美国、香港、加拿大、新加坡等地区,最高速度可达19.7 M/S。只需复制下方的Clash节点/V2ray节点和singbox节点订阅链接,在客户端添加后即可正常使用。</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row w3l-achievements">
+    <div class="col-lg-12 item">
+        <div class="card">
+            <div class="box-wrap">
+                <h4><a href="/free-nodes/2026-8-10-clash-node.htm">Clash节点在线 | 8月10日22.5M/S|免费Clash节点/Singbox节点/V2ray节点/SSR节点/Trojan节点/Shadowrocket节点节点推荐，安卓机场梯子购买推荐</a></h4>
+                <p>这一次的节点更新覆盖了韩国、日本、美国、欧洲、香港、加拿大、新加坡等地区,最高速度可达22.5 M/S。只需复制下方的Clash节点/V2ray节点和singbox节点订阅链接,在客户端添加后即可正常使用。</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row w3l-achievements">
+    <div class="col-lg-12 item">
+        <div class="card">
+            <div class="box-wrap">
+                <h4><a href="/free-nodes/2026-8-26-free-clash.htm">Clash节点在线 | 8月26日22.9M/S|免费V2ray节点/Singbox节点/Trojan节点/Shadowrocket节点/Clash节点/SSR节点节点推荐，安卓机场梯子购买推荐</a></h4>
+                <p>这一次的节点更新覆盖了美国、欧洲、新加坡、日本、加拿大、韩国、香港等地区,最高速度可达22.9 M/S。只需复制下方的Clash节点/V2ray节点和singbox节点订阅链接,在客户端添加后即可正常使用。</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row w3l-achievements">
+    <div class="col-lg-12 item">
+        <div class="card">
+            <div class="box-wrap">
                 <h4><a href="/free-nodes/2026-8-14-free-v2ray.htm">Clash节点在线 | 8月14日19.7M/S|免费Trojan节点/Clash节点/Singbox节点/V2ray节点/Shadowrocket节点/SSR节点节点推荐，安卓机场梯子购买推荐</a></h4>
                 <p>这一次的节点更新覆盖了韩国、新加坡、日本、加拿大、欧洲、美国、香港等地区,最高速度可达19.7 M/S。只需复制下方的Clash节点/V2ray节点和singbox节点订阅链接,在客户端添加后即可正常使用。</p>
             </div>
@@ -262,8 +302,8 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
     <div class="col-lg-12 item">
         <div class="card">
             <div class="box-wrap">
-                <h4><a href="/free-nodes/2026-7-21-clash-windows.htm">Clash节点在线 | 7月21日19.3M/S|免费Singbox节点/SSR节点/Shadowrocket节点/Trojan节点/V2ray节点/Clash节点节点推荐，安卓机场梯子购买推荐</a></h4>
-                <p>这一次的节点更新覆盖了香港、美国、加拿大、日本、韩国、欧洲、新加坡等地区,最高速度可达19.3 M/S。只需复制下方的Clash节点/V2ray节点和singbox节点订阅链接,在客户端添加后即可正常使用。</p>
+                <h4><a href="/free-nodes/2026-8-30-clash-v2ray-ss-ssr.htm">Clash节点在线 | 8月30日21.8M/S|免费Clash节点/SSR节点/Singbox节点/V2ray节点/Trojan节点/Shadowrocket节点节点推荐，安卓机场梯子购买推荐</a></h4>
+                <p>这一次的节点更新覆盖了加拿大、日本、美国、香港、新加坡、韩国、欧洲等地区,最高速度可达21.8 M/S。只需复制下方的Clash节点/V2ray节点和singbox节点订阅链接,在客户端添加后即可正常使用。</p>
             </div>
         </div>
     </div>
@@ -272,8 +312,8 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
     <div class="col-lg-12 item">
         <div class="card">
             <div class="box-wrap">
-                <h4><a href="/free-nodes/free-ssr-node-2026-8-7.htm">Clash节点在线 | 8月7日22.3M/S|免费V2ray节点/Shadowrocket节点/Clash节点/Singbox节点/SSR节点/Trojan节点节点推荐，安卓机场梯子购买推荐</a></h4>
-                <p>这一次的节点更新覆盖了香港、欧洲、日本、韩国、美国、新加坡、加拿大等地区,最高速度可达22.3 M/S。只需复制下方的Clash节点/V2ray节点和singbox节点订阅链接,在客户端添加后即可正常使用。</p>
+                <h4><a href="/free-nodes/clash-windows-2026-8-23.htm">Clash节点在线 | 8月23日21.4M/S|免费Clash节点/SSR节点/Trojan节点/Shadowrocket节点/V2ray节点/Singbox节点节点推荐，安卓机场梯子购买推荐</a></h4>
+                <p>这一次的节点更新覆盖了韩国、加拿大、新加坡、美国、日本、欧洲、香港等地区,最高速度可达21.4 M/S。只需复制下方的Clash节点/V2ray节点和singbox节点订阅链接,在客户端添加后即可正常使用。</p>
             </div>
         </div>
     </div>
@@ -282,8 +322,8 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
     <div class="col-lg-12 item">
         <div class="card">
             <div class="box-wrap">
-                <h4><a href="/free-nodes/2026-7-28-free-v2ray.htm">Clash节点在线 | 7月28日21.6M/S|免费Shadowrocket节点/Trojan节点/SSR节点/Clash节点/V2ray节点/Singbox节点节点推荐，安卓机场梯子购买推荐</a></h4>
-                <p>这一次的节点更新覆盖了韩国、日本、新加坡、加拿大、香港、美国、欧洲等地区,最高速度可达21.6 M/S。只需复制下方的Clash节点/V2ray节点和singbox节点订阅链接,在客户端添加后即可正常使用。</p>
+                <h4><a href="/free-nodes/2026-8-20-free-v2ray.htm">Clash节点在线 | 8月20日19.6M/S|免费SSR节点/Singbox节点/Trojan节点/Clash节点/Shadowrocket节点/V2ray节点节点推荐，安卓机场梯子购买推荐</a></h4>
+                <p>这一次的节点更新覆盖了美国、欧洲、香港、新加坡、加拿大、韩国、日本等地区,最高速度可达19.6 M/S。只需复制下方的Clash节点/V2ray节点和singbox节点订阅链接,在客户端添加后即可正常使用。</p>
             </div>
         </div>
     </div>
@@ -292,8 +332,8 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
     <div class="col-lg-12 item">
         <div class="card">
             <div class="box-wrap">
-                <h4><a href="/free-nodes/shadowrocket-node-2026-7-29.htm">Clash节点在线 | 7月29日20.3M/S|免费V2ray节点/Clash节点/Trojan节点/SSR节点/Shadowrocket节点/Singbox节点节点推荐，安卓机场梯子购买推荐</a></h4>
-                <p>这一次的节点更新覆盖了加拿大、香港、美国、欧洲、韩国、日本、新加坡等地区,最高速度可达20.3 M/S。只需复制下方的Clash节点/V2ray节点和singbox节点订阅链接,在客户端添加后即可正常使用。</p>
+                <h4><a href="/free-nodes/2026-8-16-free-clash.htm">Clash节点在线 | 8月16日21.3M/S|免费Trojan节点/SSR节点/Clash节点/Singbox节点/Shadowrocket节点/V2ray节点节点推荐，安卓机场梯子购买推荐</a></h4>
+                <p>这一次的节点更新覆盖了日本、新加坡、香港、韩国、欧洲、美国、加拿大等地区,最高速度可达21.3 M/S。只需复制下方的Clash节点/V2ray节点和singbox节点订阅链接,在客户端添加后即可正常使用。</p>
             </div>
         </div>
     </div>
@@ -302,48 +342,8 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
     <div class="col-lg-12 item">
         <div class="card">
             <div class="box-wrap">
-                <h4><a href="/free-nodes/free-ssr-node-2026-8-13.htm">Clash节点在线 | 8月13日18.5M/S|免费V2ray节点/Trojan节点/Shadowrocket节点/SSR节点/Singbox节点/Clash节点节点推荐，安卓机场梯子购买推荐</a></h4>
-                <p>这一次的节点更新覆盖了日本、香港、加拿大、韩国、欧洲、新加坡、美国等地区,最高速度可达18.5 M/S。只需复制下方的Clash节点/V2ray节点和singbox节点订阅链接,在客户端添加后即可正常使用。</p>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="row w3l-achievements">
-    <div class="col-lg-12 item">
-        <div class="card">
-            <div class="box-wrap">
-                <h4><a href="/free-nodes/2026-7-25-free-clash-subscribe.htm">Clash节点在线 | 7月25日22.1M/S|免费Shadowrocket节点/Trojan节点/SSR节点/Singbox节点/Clash节点/V2ray节点节点推荐，安卓机场梯子购买推荐</a></h4>
-                <p>这一次的节点更新覆盖了新加坡、香港、日本、欧洲、韩国、加拿大、美国等地区,最高速度可达22.1 M/S。只需复制下方的Clash节点/V2ray节点和singbox节点订阅链接,在客户端添加后即可正常使用。</p>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="row w3l-achievements">
-    <div class="col-lg-12 item">
-        <div class="card">
-            <div class="box-wrap">
-                <h4><a href="/free-nodes/free-ssr-node-2026-8-1.htm">Clash节点在线 | 8月1日19.7M/S|免费SSR节点/V2ray节点/Shadowrocket节点/Singbox节点/Trojan节点/Clash节点节点推荐，安卓机场梯子购买推荐</a></h4>
-                <p>这一次的节点更新覆盖了香港、美国、欧洲、新加坡、日本、韩国、加拿大等地区,最高速度可达19.7 M/S。只需复制下方的Clash节点/V2ray节点和singbox节点订阅链接,在客户端添加后即可正常使用。</p>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="row w3l-achievements">
-    <div class="col-lg-12 item">
-        <div class="card">
-            <div class="box-wrap">
-                <h4><a href="/free-nodes/2026-7-23-node-share-links.htm">Clash节点在线 | 7月23日20.4M/S|免费Trojan节点/SSR节点/Singbox节点/Clash节点/V2ray节点/Shadowrocket节点节点推荐，安卓机场梯子购买推荐</a></h4>
-                <p>这一次的节点更新覆盖了新加坡、日本、香港、欧洲、美国、加拿大、韩国等地区,最高速度可达20.4 M/S。只需复制下方的Clash节点/V2ray节点和singbox节点订阅链接,在客户端添加后即可正常使用。</p>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="row w3l-achievements">
-    <div class="col-lg-12 item">
-        <div class="card">
-            <div class="box-wrap">
-                <h4><a href="/free-nodes/2026-8-12-free-shadowrocket-node.htm">Clash节点在线 | 8月12日19.7M/S|免费SSR节点/Trojan节点/Clash节点/Shadowrocket节点/V2ray节点/Singbox节点节点推荐，安卓机场梯子购买推荐</a></h4>
-                <p>这一次的节点更新覆盖了韩国、欧洲、香港、日本、美国、新加坡、加拿大等地区,最高速度可达19.7 M/S。只需复制下方的Clash节点/V2ray节点和singbox节点订阅链接,在客户端添加后即可正常使用。</p>
+                <h4><a href="/free-nodes/2026-8-28-free-node-subscribe.htm">Clash节点在线 | 8月28日19.8M/S|免费V2ray节点/SSR节点/Trojan节点/Shadowrocket节点/Singbox节点/Clash节点节点推荐，安卓机场梯子购买推荐</a></h4>
+                <p>这一次的节点更新覆盖了新加坡、香港、美国、日本、加拿大、欧洲、韩国等地区,最高速度可达19.8 M/S。只需复制下方的Clash节点/V2ray节点和singbox节点订阅链接,在客户端添加后即可正常使用。</p>
             </div>
         </div>
     </div>
@@ -354,8 +354,8 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
     <div class="col-lg-12 item">
         <div class="card">
             <div class="box-wrap">
-                                <h4><span class="badge" style="float: right;">25</span> <a href="/date/2026-08/" title="2026-08 归档">2026-08</a></h4>
-                                <h4><span class="badge" style="float: right;">13</span> <a href="/date/2026-07/" title="2026-07 归档">2026-07</a></h4>
+                                <h4><span class="badge" style="float: right;">4</span> <a href="/date/2026-09/" title="2026-09 归档">2026-09</a></h4>
+                                <h4><span class="badge" style="float: right;">26</span> <a href="/date/2026-08/" title="2026-08 归档">2026-08</a></h4>
                             </div>
         </div>
     </div>
